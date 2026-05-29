@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540" role="img" aria-labelledby="title desc">
+  <title id="title">Interior designer service app preview</title>
+  <desc id="desc">A blue-toned dashboard illustration for a home interior designer service application.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="540" fill="url(#bg)"/>
+  <rect x="64" y="58" width="772" height="424" rx="20" fill="#ffffff" opacity=".92"/>
+  <rect x="96" y="96" width="220" height="348" rx="14" fill="#0f172a"/>
+  <rect x="340" y="96" width="464" height="70" rx="14" fill="url(#accent)"/>
+  <rect x="368" y="120" width="168" height="16" rx="8" fill="#ffffff" opacity=".92"/>
+  <rect x="368" y="218" width="180" height="154" rx="14" fill="#dbeafe"/>
+  <rect x="580" y="218" width="180" height="154" rx="14" fill="#bfdbfe"/>
+  <path d="M128 368h154v48H128zM128 304h154v36H128zM128 128h154v138H128z" fill="#1d4ed8"/>
+  <circle cx="458" cy="292" r="42" fill="#2563eb"/>
+  <path d="M625 310l34-50 56 82H607z" fill="#1d4ed8"/>
+  <rect x="368" y="398" width="392" height="18" rx="9" fill="#93c5fd"/>
+</svg>

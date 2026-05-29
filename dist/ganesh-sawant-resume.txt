@@ -1,0 +1,30 @@
+Ganesh Sawant
+Aspiring Software Developer
+
+Email: ganesh.sawant@example.com
+Phone: +91 98765 43210
+GitHub: https://github.com/
+LinkedIn: https://www.linkedin.com/
+
+Summary
+Aspiring software developer with hands-on experience building responsive React interfaces, reusable components, and modern web applications.
+
+Skills
+Frontend: React, JavaScript, HTML5, CSS3, Tailwind CSS
+Backend: Node.js, Express, REST APIs
+Database: MongoDB, MySQL, Firebase
+Tools: Git, GitHub, Vite, VS Code, Postman
+
+Projects
+Home Interior Designer Service App
+Weather App
+Task Management App
+
+Experience
+Web Development Internship
+- Built responsive pages from UI requirements.
+- Supported bug fixing, component cleanup, and frontend improvements.
+- Used Git workflows and deployment-ready project builds.
+
+Education
+BSc IT, Mumbai University

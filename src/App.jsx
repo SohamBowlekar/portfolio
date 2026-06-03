@@ -11,6 +11,7 @@ import {
   GraduationCap,
   Linkedin,
   Mail,
+  MapPin,
   Menu,
   Moon,
   Phone,
@@ -22,13 +23,14 @@ import {
 } from "lucide-react";
 
 const profile = {
-  name: "Ganesh Sawant",
-  title: "Aspiring Software Developer",
-  email: "ganesh.sawant@example.com",
-  phone: "+91 98765 43210",
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
-  resume: "/ganesh-sawant-resume.txt"
+  name: "Soham Bowlekar",
+  title: "IT Student | Beginner Android Developer",
+  email: "sohambow@gmail.com",
+  phone: "+91 94209 73095",
+  location: "Math, Bowlekarwadi, Vengurla",
+  github: "",
+  linkedin: "https://www.linkedin.com/in/soham-bowlekar-b084a43a5/",
+  resume: "/soham_b_resume_c.pdf"
 };
 
 const navItems = [
@@ -42,43 +44,44 @@ const navItems = [
 ];
 
 const skillGroups = [
-  { title: "Frontend", icon: Code2, skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-  { title: "Backend", icon: Server, skills: ["Node.js", "Express", "REST APIs", "Authentication"] },
-  { title: "Database", icon: Database, skills: ["MongoDB", "MySQL", "Firebase", "Data Modeling"] },
-  { title: "Tools", icon: TerminalSquare, skills: ["Git", "GitHub", "Vite", "VS Code", "Postman"] }
+  { title: "Programming", icon: Code2, skills: ["Java", "Python", "JavaScript", "C", "C++", "Kotlin"] },
+  { title: "Web & App", icon: Server, skills: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Node.js", "Android"] },
+  { title: "Databases", icon: Database, skills: ["MySQL", "MongoDB", "Firebase Realtime Database", "Firestore"] },
+  { title: "Tools & Concepts", icon: TerminalSquare, skills: ["GitHub", "VS Code", "Android Studio", "Power BI", "Excel", "DSA"] }
 ];
 
 const projects = [
   {
-    title: "Home Interior Designer Service App",
-    image: "/project-interior.svg",
-    description: "A service booking interface for interior design consultations, package discovery, and client project requests.",
-    tech: ["React", "Tailwind CSS", "Firebase"],
-    github: "https://github.com/",
-    demo: "https://vercel.com/"
+    title: "Mohan Logistics Express Cargo",
+    image: "/project-logistics.svg",
+    description: "A transport load management and live tracking system with role-based access, shipment workflows, Firebase data storage, and map-based tracking.",
+    tech: ["React", "Vite", "Tailwind CSS", "Firebase", "Firestore", "Google Maps API"],
+    github: "",
+    demo: ""
   },
   {
-    title: "Weather App",
-    image: "/project-weather.svg",
-    description: "A responsive weather dashboard with city search, current conditions, forecasts, and clean data presentation.",
-    tech: ["React", "API", "CSS"],
-    github: "https://github.com/",
-    demo: "https://vercel.com/"
+    title: "Soft Drink Management System",
+    image: "/project-sdms.svg",
+    description: "An Android application for managing distributors, product inventories, order records, secure login, and Firebase CRUD operations.",
+    tech: ["Kotlin", "Firebase Realtime Database", "Firebase Auth", "RecyclerView"],
+    github: "",
+    demo: ""
   },
   {
-    title: "Task Management App",
-    image: "/project-task.svg",
-    description: "A productivity app for creating, organizing, and tracking tasks with status filters and priority views.",
-    tech: ["React", "Local Storage", "Tailwind CSS"],
-    github: "https://github.com/",
-    demo: "https://vercel.com/"
+    title: "Smart Turf Booking and Management System",
+    image: "/project-turf.svg",
+    description: "A web platform for online turf booking with slot availability checks, booking cost calculation, admin management, and MongoDB-backed records.",
+    tech: ["HTML", "CSS", "PHP", "MongoDB", "VS Code"],
+    github: "",
+    demo: ""
   }
 ];
 
 const experiencePoints = [
-  "Built responsive web pages from UI requirements using React, JavaScript, HTML, and CSS.",
-  "Collaborated on bug fixes, component cleanup, and frontend performance improvements.",
-  "Worked with Git-based workflows, code reviews, and deployment-ready project builds."
+  "Completed a 6-month data engineering internship focused on data cleaning and file format conversion.",
+  "Worked on data updates, transformation, reporting, and automation using Excel and JavaScript.",
+  "Used MySQL and NoSQL concepts for data storage, querying, partitioning, validation, and consistency checks.",
+  "Contributed to query optimization and performance tuning to improve database efficiency."
 ];
 
 const container = {
@@ -156,7 +159,7 @@ function Navbar({ activeSection, theme, onThemeToggle }) {
           <span className="grid size-9 place-items-center rounded-lg bg-blue-600 text-white shadow-lg shadow-blue-600/25">
             <Code2 size={19} />
           </span>
-          <span>Ganesh.dev</span>
+          <span>Soham.dev</span>
         </a>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -196,7 +199,7 @@ function Navbar({ activeSection, theme, onThemeToggle }) {
 }
 
 function Hero() {
-  const typed = useTyping(["React Developer", "Frontend Enthusiast", "Problem Solver", "Clean UI Builder"]);
+  const typed = useTyping(["React Developer", "Beginner Android Developer", "Data Engineering Intern", "Firebase Builder"]);
 
   return (
     <section id="home" className="relative isolate min-h-screen overflow-hidden pt-16">
@@ -205,7 +208,7 @@ function Hero() {
         <motion.div variants={container} initial="hidden" animate="show" className="grid gap-7">
           <motion.p variants={fadeUp} className="inline-flex w-fit items-center gap-2 rounded-lg border border-blue-500/20 bg-blue-500/10 px-3 py-2 text-sm font-semibold text-blue-700 dark:text-blue-200">
             <Sparkles size={16} />
-            Available for internships and junior developer roles
+            Open to software development, Android, and data-focused roles
           </motion.p>
           <motion.div variants={fadeUp} className="grid gap-4">
             <h1 className="text-4xl font-black leading-tight text-slate-950 sm:text-6xl dark:text-white">
@@ -217,17 +220,19 @@ function Hero() {
             </p>
           </motion.div>
           <motion.p variants={fadeUp} className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg dark:text-slate-300">
-            Motivated BSc IT student focused on building responsive, accessible, and performance-conscious web applications with React and modern JavaScript.
+            B.Sc. Information Technology student with hands-on experience in web and Android application development, Firebase-backed systems, database management, and data engineering workflows.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col gap-3 sm:flex-row">
             <a className="primary-button" href={profile.resume} download>
               <Download size={18} />
               Download Resume
             </a>
-            <a className="secondary-button" href={profile.github} target="_blank" rel="noreferrer">
-              <Github size={18} />
-              GitHub
-            </a>
+            {profile.github && (
+              <a className="secondary-button" href={profile.github} target="_blank" rel="noreferrer">
+                <Github size={18} />
+                GitHub
+              </a>
+            )}
             <a className="secondary-button" href={profile.linkedin} target="_blank" rel="noreferrer">
               <Linkedin size={18} />
               LinkedIn
@@ -244,15 +249,15 @@ function Hero() {
             </div>
             <pre className="overflow-hidden text-sm leading-7 text-slate-200">
 {`const developer = {
-  name: "Ganesh Sawant",
-  focus: "React + UI Engineering",
-  values: ["clean code", "accessibility", "learning"],
-  goal: "ship useful software"
+  name: "Soham Bowlekar",
+  focus: "React + Android + Firebase",
+  strengths: ["data handling", "role-based apps", "teamwork"],
+  goal: "build scalable real-world software"
 };`}
             </pre>
           </div>
           <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-            {["React", "Vite", "Tailwind"].map((item) => (
+            {["React", "Firebase", "Kotlin"].map((item) => (
               <span key={item} className="rounded-lg bg-blue-500/10 px-3 py-3 text-sm font-bold text-blue-700 dark:text-blue-200">{item}</span>
             ))}
           </div>
@@ -264,12 +269,12 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About" title="A practical developer profile built for real hiring signals.">
+    <Section id="about" eyebrow="About" title="An IT student building web, Android, and data-driven applications.">
       <div className="grid gap-5 lg:grid-cols-3">
         {[
-          ["Professional Summary", "Aspiring software developer with hands-on experience building responsive React interfaces, reusable components, and clean frontend flows."],
-          ["Career Goals", "Grow into a full-stack developer role by strengthening system design, API integration, testing, and production deployment skills."],
-          ["Skills Overview", "Comfortable across frontend development, backend fundamentals, databases, version control, and modern web tooling."]
+          ["Professional Summary", "B.Sc. IT student skilled in React.js, Firebase, Java, Python, MySQL, MongoDB, JavaScript, and beginner Android development with Kotlin."],
+          ["Career Goals", "Focused on growing as a software developer by building scalable applications, improving backend and database skills, and solving practical business problems."],
+          ["Skills Overview", "Hands-on project experience includes role-based authentication, live tracking, Firebase CRUD operations, dashboards, booking workflows, and data transformation."]
         ].map(([title, copy]) => (
           <motion.article variants={fadeUp} key={title} className="glass-card p-6">
             <CheckCircle2 className="mb-5 text-blue-600 dark:text-blue-300" size={26} />
@@ -320,10 +325,12 @@ function Projects() {
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => <span className="skill-pill" key={tech}>{tech}</span>)}
               </div>
-              <div className="flex gap-3 pt-2">
-                <a className="project-link" href={project.github} target="_blank" rel="noreferrer"><Github size={17} /> Code</a>
-                <a className="project-link" href={project.demo} target="_blank" rel="noreferrer"><ArrowUpRight size={17} /> Demo</a>
-              </div>
+              {(project.github || project.demo) && (
+                <div className="flex gap-3 pt-2">
+                  {project.github && <a className="project-link" href={project.github} target="_blank" rel="noreferrer"><Github size={17} /> Code</a>}
+                  {project.demo && <a className="project-link" href={project.demo} target="_blank" rel="noreferrer"><ArrowUpRight size={17} /> Demo</a>}
+                </div>
+              )}
             </div>
           </motion.article>
         ))}
@@ -334,7 +341,7 @@ function Projects() {
 
 function Experience() {
   return (
-    <Section id="experience" eyebrow="Experience" title="Early professional experience with web development delivery.">
+    <Section id="experience" eyebrow="Experience" title="Professional internship experience in data engineering.">
       <motion.div variants={fadeUp} className="glass-card relative p-6 sm:p-8">
         <div className="absolute bottom-8 left-8 top-8 hidden w-px bg-blue-500/30 sm:block" />
         <div className="grid gap-6 sm:grid-cols-[72px_1fr]">
@@ -342,9 +349,9 @@ function Experience() {
             <BriefcaseBusiness size={25} />
           </div>
           <div>
-            <p className="text-sm font-bold uppercase text-blue-700 dark:text-blue-300">Web Development Internship</p>
-            <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">Frontend development, UI implementation, and project support</h3>
-            <p className="mt-2 text-slate-500 dark:text-slate-400">Internship Timeline: 2025</p>
+            <p className="text-sm font-bold uppercase text-blue-700 dark:text-blue-300">Data Engineer Intern</p>
+            <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">Vyosim Pvt. Ltd.</h3>
+            <p className="mt-2 text-slate-500 dark:text-slate-400">December 2024 - May 2025</p>
             <ul className="mt-6 grid gap-3">
               {experiencePoints.map((point) => (
                 <li key={point} className="flex gap-3 text-slate-600 dark:text-slate-300">
@@ -361,32 +368,59 @@ function Experience() {
 }
 
 function Education() {
+  const education = [
+    {
+      degree: "Bachelor of Science (B.Sc.) in Information Technology",
+      school: "Mumbai University",
+      period: "June 2023 - April 2026",
+      score: "CGPI: 8.30"
+    },
+    {
+      degree: "Higher Secondary Certificate (HSC)",
+      school: "Maharashtra Board",
+      period: "February 2023",
+      score: "73.83%"
+    },
+    {
+      degree: "Secondary School Certificate (SSC)",
+      school: "Maharashtra Board",
+      period: "May 2021",
+      score: "82.40%"
+    }
+  ];
+
   return (
     <Section id="education" eyebrow="Education" title="Academic foundation in information technology.">
-      <motion.article variants={fadeUp} className="glass-card flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex gap-4">
-          <div className="grid size-14 flex-none place-items-center rounded-lg bg-blue-600 text-white">
-            <GraduationCap size={26} />
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-slate-950 dark:text-white">BSc IT</h3>
-            <p className="mt-2 text-slate-600 dark:text-slate-300">Mumbai University</p>
-          </div>
-        </div>
-        <span className="w-fit rounded-lg bg-blue-500/10 px-4 py-2 text-sm font-bold text-blue-700 dark:text-blue-200">Software Development Focus</span>
-      </motion.article>
+      <div className="grid gap-5">
+        {education.map((item) => (
+          <motion.article key={item.degree} variants={fadeUp} className="glass-card flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex gap-4">
+              <div className="grid size-14 flex-none place-items-center rounded-lg bg-blue-600 text-white">
+                <GraduationCap size={26} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-950 dark:text-white">{item.degree}</h3>
+                <p className="mt-2 text-slate-600 dark:text-slate-300">{item.school}</p>
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{item.period}</p>
+              </div>
+            </div>
+            <span className="w-fit rounded-lg bg-blue-500/10 px-4 py-2 text-sm font-bold text-blue-700 dark:text-blue-200">{item.score}</span>
+          </motion.article>
+        ))}
+      </div>
     </Section>
   );
 }
 
 function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let’s connect about internships, junior roles, or project work.">
+    <Section id="contact" eyebrow="Contact" title="Let us connect about internships, junior roles, or project work.">
       <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         <motion.div variants={fadeUp} className="glass-card grid content-start gap-4 p-6">
           <a className="contact-line" href={`mailto:${profile.email}`}><Mail size={20} /> {profile.email}</a>
           <a className="contact-line" href={`tel:${profile.phone.replaceAll(" ", "")}`}><Phone size={20} /> {profile.phone}</a>
-          <a className="contact-line" href={profile.github} target="_blank" rel="noreferrer"><Github size={20} /> GitHub Profile</a>
+          <span className="contact-line"><MapPin size={20} /> {profile.location}</span>
+          {profile.github && <a className="contact-line" href={profile.github} target="_blank" rel="noreferrer"><Github size={20} /> GitHub Profile</a>}
           <a className="contact-line" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={20} /> LinkedIn Profile</a>
         </motion.div>
         <motion.form variants={fadeUp} className="glass-card grid gap-4 p-6" onSubmit={(event) => event.preventDefault()}>
@@ -418,7 +452,7 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between dark:text-slate-300">
         <p>Copyright {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
         <div className="flex gap-3">
-          <a className="icon-button" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a>
+          {profile.github && <a className="icon-button" href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a>}
           <a className="icon-button" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
           <a className="icon-button" href={`mailto:${profile.email}`} aria-label="Email"><Mail size={18} /></a>
         </div>

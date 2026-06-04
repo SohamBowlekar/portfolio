@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+body,
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.22);
+}
+
+.section {
+  scroll-margin-top: 4rem;
+}
+
+.hero-grid {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(37, 99, 235, 0.18), transparent 28rem),
+    radial-gradient(circle at 84% 32%, rgba(14, 165, 233, 0.16), transparent 25rem),
+    linear-gradient(rgba(100, 116, 139, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.11) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+.dark .hero-grid {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(37, 99, 235, 0.26), transparent 28rem),
+    radial-gradient(circle at 84% 32%, rgba(14, 165, 233, 0.18), transparent 25rem),
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+.glass-card {
+  border: 1px solid rgba(203, 213, 225, 0.78);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.dark .glass-card {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.62);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.25);
+}
+
+.section-eyebrow {
+  margin: 0 0 0.75rem;
+  color: rgb(37, 99, 235);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.dark .section-eyebrow {
+  color: rgb(147, 197, 253);
+}
+
+.section-title {
+  margin: 0;
+  color: rgb(15, 23, 42);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.dark .section-title {
+  color: white;
+}
+
+.nav-link {
+  border-radius: 8px;
+  color: rgb(71, 85, 105);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.6rem 0.8rem;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(37, 99, 235, 0.1);
+  color: rgb(29, 78, 216);
+}
+
+.dark .nav-link {
+  color: rgb(203, 213, 225);
+}
+
+.dark .nav-link:hover,
+.dark .nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.icon-button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 8px;
+  color: rgb(15, 23, 42);
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  width: 2.5rem;
+}
+
+.icon-button:hover {
+  border-color: rgba(37, 99, 235, 0.55);
+  transform: translateY(-1px);
+}
+
+.dark .icon-button {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: white;
+}
+
+.primary-button,
+.secondary-button,
+.project-link {
+  align-items: center;
+  border-radius: 8px;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 0.55rem;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0 1rem;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.primary-button {
+  background: rgb(37, 99, 235);
+  border: 1px solid rgb(37, 99, 235);
+  color: white;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.project-link:hover {
+  transform: translateY(-2px);
+}
+
+.secondary-button,
+.project-link {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  color: rgb(15, 23, 42);
+}
+
+.dark .secondary-button,
+.dark .project-link {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: white;
+}
+
+.skill-pill {
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.08);
+  color: rgb(29, 78, 216);
+  display: inline-flex;
+  font-size: 0.84rem;
+  font-weight: 800;
+  padding: 0.45rem 0.65rem;
+}
+
+.dark .skill-pill {
+  border-color: rgba(147, 197, 253, 0.18);
+  background: rgba(37, 99, 235, 0.16);
+  color: rgb(191, 219, 254);
+}
+
+.contact-line {
+  align-items: center;
+  border: 1px solid rgba(203, 213, 225, 0.75);
+  border-radius: 8px;
+  color: rgb(51, 65, 85);
+  display: flex;
+  gap: 0.75rem;
+  min-height: 3.2rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+}
+
+.contact-line:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+  color: rgb(29, 78, 216);
+}
+
+.dark .contact-line {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgb(203, 213, 225);
+}
+
+.dark .contact-line:hover {
+  color: white;
+}
+
+label {
+  color: rgb(51, 65, 85);
+  display: grid;
+  font-size: 0.92rem;
+  font-weight: 800;
+  gap: 0.5rem;
+}
+
+.dark label {
+  color: rgb(226, 232, 240);
+}
+
+input,
+textarea {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(203, 213, 225, 0.82);
+  border-radius: 8px;
+  color: rgb(15, 23, 42);
+  min-height: 2.9rem;
+  padding: 0.8rem 0.95rem;
+  resize: vertical;
+  width: 100%;
+}
+
+textarea {
+  line-height: 1.6;
+}
+
+.dark input,
+.dark textarea {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(100, 116, 139);
+}
+
+.typing-cursor {
+  animation: cursor-blink 1s steps(2, start) infinite;
+  color: rgb(37, 99, 235);
+  margin-left: 2px;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

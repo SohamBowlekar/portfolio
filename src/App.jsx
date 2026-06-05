@@ -28,7 +28,7 @@ const profile = {
   email: "sohambow@gmail.com",
   phone: "+91 94209 73095",
   location: "Math, Bowlekarwadi, Vengurla",
-  github: "",
+  github: "https://github.com/SohamBowlekar",
   linkedin: "https://www.linkedin.com/in/soham-bowlekar-b084a43a5/",
   resume: "/soham_b_resume_c.pdf"
 };
@@ -57,7 +57,7 @@ const projects = [
     description: "A transport load management and live tracking system with role-based access, shipment workflows, Firebase data storage, and map-based tracking.",
     tech: ["React", "Vite", "Tailwind CSS", "Firebase", "Firestore", "Google Maps API"],
     github: "",
-    demo: ""
+    demo: "https://transport-management-omega.vercel.app/"
   },
   {
     title: "Soft Drink Management System",
@@ -204,7 +204,7 @@ function Hero() {
   return (
     <section id="home" className="relative isolate min-h-screen overflow-hidden pt-16">
       <div className="hero-grid absolute inset-0 -z-10" />
-      <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl items-center gap-12 px-5 py-20 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+      <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl items-center px-5 py-20 sm:px-6 lg:px-8">
         <motion.div variants={container} initial="hidden" animate="show" className="grid gap-7">
           <motion.p variants={fadeUp} className="inline-flex w-fit items-center gap-2 rounded-lg border border-blue-500/20 bg-blue-500/10 px-3 py-2 text-sm font-semibold text-blue-700 dark:text-blue-200">
             <Sparkles size={16} />
@@ -240,28 +240,6 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, ease: "easeOut" }} className="glass-card p-5">
-          <div className="rounded-lg border border-slate-200 bg-slate-950 p-4 shadow-2xl dark:border-white/10">
-            <div className="mb-4 flex gap-2">
-              <span className="size-3 rounded-full bg-red-400" />
-              <span className="size-3 rounded-full bg-amber-300" />
-              <span className="size-3 rounded-full bg-emerald-400" />
-            </div>
-            <pre className="overflow-hidden text-sm leading-7 text-slate-200">
-{`const developer = {
-  name: "Soham Bowlekar",
-  focus: "React + Android + Firebase",
-  strengths: ["data handling", "role-based apps", "teamwork"],
-  goal: "build scalable real-world software"
-};`}
-            </pre>
-          </div>
-          <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-            {["React", "Firebase", "Kotlin"].map((item) => (
-              <span key={item} className="rounded-lg bg-blue-500/10 px-3 py-3 text-sm font-bold text-blue-700 dark:text-blue-200">{item}</span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
@@ -318,9 +296,19 @@ function Projects() {
       <div className="grid gap-6 lg:grid-cols-3">
         {projects.map((project) => (
           <motion.article variants={fadeUp} whileHover={{ y: -6 }} key={project.title} className="glass-card overflow-hidden">
-            <img className="h-48 w-full object-cover" src={project.image} alt={`${project.title} preview`} loading="lazy" />
+            {project.demo ? (
+              <a href={project.demo} target="_blank" rel="noreferrer" aria-label={`Open live ${project.title} project`}>
+                <img className="h-48 w-full object-cover" src={project.image} alt={`${project.title} preview`} loading="lazy" />
+              </a>
+            ) : (
+              <img className="h-48 w-full object-cover" src={project.image} alt={`${project.title} preview`} loading="lazy" />
+            )}
             <div className="grid gap-4 p-6">
-              <h3 className="text-xl font-bold text-slate-950 dark:text-white">{project.title}</h3>
+              <h3 className="text-xl font-bold text-slate-950 dark:text-white">
+                {project.demo ? (
+                  <a className="hover:text-blue-700 dark:hover:text-blue-300" href={project.demo} target="_blank" rel="noreferrer">{project.title}</a>
+                ) : project.title}
+              </h3>
               <p className="leading-7 text-slate-600 dark:text-slate-300">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech) => <span className="skill-pill" key={tech}>{tech}</span>)}
@@ -328,7 +316,7 @@ function Projects() {
               {(project.github || project.demo) && (
                 <div className="flex gap-3 pt-2">
                   {project.github && <a className="project-link" href={project.github} target="_blank" rel="noreferrer"><Github size={17} /> Code</a>}
-                  {project.demo && <a className="project-link" href={project.demo} target="_blank" rel="noreferrer"><ArrowUpRight size={17} /> Demo</a>}
+                  {project.demo && <a className="project-link" href={project.demo} target="_blank" rel="noreferrer"><ArrowUpRight size={17} /> View Live</a>}
                 </div>
               )}
             </div>
@@ -415,7 +403,7 @@ function Education() {
 function Contact() {
   return (
     <Section id="contact" eyebrow="Contact" title="Let us connect about internships, junior roles, or project work.">
-      <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="max-w-3xl">
         <motion.div variants={fadeUp} className="glass-card grid content-start gap-4 p-6">
           <a className="contact-line" href={`mailto:${profile.email}`}><Mail size={20} /> {profile.email}</a>
           <a className="contact-line" href={`tel:${profile.phone.replaceAll(" ", "")}`}><Phone size={20} /> {profile.phone}</a>
@@ -423,24 +411,6 @@ function Contact() {
           {profile.github && <a className="contact-line" href={profile.github} target="_blank" rel="noreferrer"><Github size={20} /> GitHub Profile</a>}
           <a className="contact-line" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={20} /> LinkedIn Profile</a>
         </motion.div>
-        <motion.form variants={fadeUp} className="glass-card grid gap-4 p-6" onSubmit={(event) => event.preventDefault()}>
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" placeholder="Your name" autoComplete="name" required />
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" placeholder="you@example.com" autoComplete="email" required />
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea name="message" placeholder="Tell me about the opportunity" rows="5" required />
-          </label>
-          <button className="primary-button w-full sm:w-fit" type="submit">
-            <Mail size={18} />
-            Send Message
-          </button>
-        </motion.form>
       </div>
     </Section>
   );
